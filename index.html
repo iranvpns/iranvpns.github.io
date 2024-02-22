@@ -1,0 +1,388 @@
+<?php
+
+
+$url = "./payment";
+
+
+?>
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فیل وی پی ان</title>
+
+</head>
+<style>
+    @import url('https://v1.fontapi.ir/css/Vazir');
+    @import url('https://v1.fontapi.ir/css/Jadid');
+
+    @font-face {
+        font-family: "KAJ";
+        src: url(./css/font/SGKara.ttf);
+    }
+
+    @font-face {
+        font-family: "MJ";
+        src: url(./css/font/Mjt.ttf);
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        transition: all 1s;
+    }
+
+    body {
+        font-family: "KAJ";
+        background-color: #fff;
+    }
+
+    .header-img {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        padding-bottom: 5px;
+        width: 100px;
+    }
+
+    .img-logo {
+        background-color: #43a7ff;
+        border-radius: 36px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    .text-header {
+        text-align: center;
+        font-size: 34px;
+        padding: 10px;
+        color: #fff;
+    }
+
+    .cadr1 {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        background-color: #43a7ff;
+        border-radius: 16px;
+        width: 90%;
+        padding: 15px;
+        color: #fff;
+        font-family: "KAJ";
+        flex-direction: column;
+    }
+
+    .card2 {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        background-color: #43a7ff;
+        border-radius: 16px;
+        width: 90%;
+        padding: 15px;
+        color: #fff;
+        font-family: "KAJ";
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin-bottom: 2rem;
+    }
+
+    .item {
+        display: flex;
+        border: 4px solid #fff;
+        border-radius: 12px;
+        padding: 10px;
+        margin: 0.5em;
+        padding: 0.5em;
+        width: 90%;
+        scroll-snap-align: end;
+        scroll-margin-inline: 0.5em;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .itemha {
+        display: flex;
+        width: 150px;
+        display: flex;
+        margin: 10px auto;
+        margin: 0.5em;
+        padding: 10px;
+        padding-top: 5rem;
+    }
+
+    .card2 {
+        overflow: auto;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE 10+ */
+    }
+
+    .card2::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+        /* Chrome/Safari/Webkit */
+    }
+
+    .card4 {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        background-color: #43a7ff;
+        border-radius: 16px;
+        width: 90%;
+        padding: 15px;
+        color: #fff;
+        font-family: "KAJ";
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .speed {
+        width: 300px;
+        border-radius: 16px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card3 {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        background-color: #43a7ff;
+        border-radius: 16px;
+        width: 90%;
+        padding: 15px;
+        color: #fff;
+        font-family: "KAJ";
+        flex-direction: column;
+        margin-bottom: 2rem;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .avali {
+        width: 80%;
+        height: 200px;
+        background-color: #fff;
+        border-radius: 16px;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding: 10px 0px;
+        font-size: 20px;
+        color: #1a1a1a;
+        flex-direction: column;
+    }
+
+    .btn {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        background-color: #fff;
+        color: #131313;
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        height: 50px;
+        font-family: "KAJ";
+        border: 0px;
+        border-radius: 12px;
+        font-weight: bolder;
+    }
+
+    .end {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        height: 50px;
+        background-color: #43a7ff;
+        border-radius: 26px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        color: #fff;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .rooz {
+        width: 100px;
+        height: 50px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #000;
+        margin-top: 1rem;
+    }
+</style>
+
+<body>
+    <div class="img-logo">
+        <img class="header-img" src="./css/img/logo.png" alt="">
+        <div class="rooz" onclick="day()">
+            <p id="textday">روشن</p>
+        </div>
+        <p class="text-header">فیلتر شکن فیل</p>
+    </div>
+    <div class="cadr1">
+        <p style="font-size: 19px;">به فیل وی پی ان خوش آمدید</p>
+        <p style="font-size: 13px; padding-top: 5px;">ما سعی کردیم برای راحتی استفاده شما از اپلیکیشن های فیلتر مانند
+            اینستاگرام , تلگرام , واتساپ , و دیگر اپلیکیشن ها فیلتر شکنی با پروتکل v2ray ایجاد کنیم</p>
+    </div>
+    <div class="card2">
+        <div class="item">
+            <p style="color: #fff; text-align: center; font-size: 20px; font-family: 'KAJ'; font-weight: bolder;">
+                پشتیبانی از تمام دستگاه ها</p>
+            <span
+                style="color: #fff; text-align: center; font-size: 10px; font-family: 'KAJ'; font-weight: bolder;">تمامی
+                سرویس های مخابرات و اپراتورها</span>
+            <img src="./css/img/1.svg" alt="" class="itemha">
+        </div>
+        <div class="item">
+            <p style="color: #fff; text-align: center; font-size: 20px; font-family: 'KAJ'; font-weight: bolder;">قیمت
+                مناسب</p>
+            <span
+                style="color: #fff; text-align: center; font-size: 10px; font-family: 'KAJ'; font-weight: bolder;">برای
+                هزینه سرور</span>
+            <img src="./css/img/2.svg" alt="" class="itemha">
+        </div>
+        <div class="item">
+            <p
+                style="color: #fff; text-align: center; font-size: 20px; font-family: 'KAJ'; font-weight: bolder;margin-top: 4rem;">
+                سرعت فوق العاده</p>
+            <span style="color: #fff; text-align: center; font-size: 10px; font-family: 'KAJ'; font-weight: bolder;">تست
+                سرعت را در ادامه خواهید دید</span>
+            <img src="./css/img/3.svg" alt="" class="itemha">
+        </div>
+        <div class="item">
+            <p style="color: #fff; text-align: center; font-size: 20px; font-family: 'KAJ'; font-weight: bolder;">سرور
+                های نامحدود</p>
+            <span
+                style="color: #fff; text-align: center; font-size: 10px; font-family: 'KAJ'; font-weight: bolder;">سرور
+                از تمامی کشور ها</span>
+            <img src="./css/img/4.svg" alt="" class="itemha">
+        </div>
+    </div>
+
+    <!-- PRICE -->
+    <form action="<?php echo("$url/index.php?Amount=۲۴۰,۰۰۰"); ?>">
+    <div id="plan1" class="card3">
+        <p>پلن اول یک ماهه</p>
+        <p style="font-size: 34px;">۲۴,۰۰۰ تومان</p>
+        <p>فوق العاده پر سرعت و پایدار</p>
+        <p>اتصال دائمی قطعی</p>
+        <p>حجم ۵۰ گیگابایت</p>
+        <p>اکانت تک کاربره</p>
+        <button type="submit" class="btn">خرید سرویس</button>
+    </div>
+
+    <div id="plan2" class="card3">
+        <p>پلن دوم سه ماهه</p>
+        <p style="font-size: 34px;">۵۴,۰۰۰ تومان</p>
+        <p>فوق العاده پر سرعت و پایدار</p>
+        <p>اتصال دائمی قطعی</p>
+        <p>حجم ۳۰۰ گیگابایت</p>
+        <p>اکانت پنج کاربره</p>
+        <button type="submit" class="btn">خرید سرویس</button>
+    </div>
+
+    <div id="plan3" class="card3">
+        <p>پلن سوم شش ماهه</p>
+        <p style="font-size: 34px;">۸۴,۰۰۰ تومان</p>
+        <p>فوق العاده پر سرعت و پایدار</p>
+        <p>اتصال دائمی قطعی</p>
+        <p>حجم ۵۰۰ گیگابایت</p>
+        <p>اکانت بیست کاربره</p>
+        <button type="submit" class="btn">خرید سرویس</button>
+    </div>
+
+    <!-- END -->
+
+    <div class="card4">
+        <p
+            style="color: #fff; text-align: center; font-size: 20px; font-family: 'KAJ'; font-weight: bolder; padding: 20px 0px;">
+            ویدیویی از تست سرعت فیل وی پی ان</p>
+        <video controls class="speed" autoplay>
+            <source src="./css/img/speed.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <footer>
+        <div class="end">
+            <p style="font-size: 16px;">هر گونه کپی برداری از فیل وی پی ان پیگرد قانونی دارد</p>
+        </div>
+    </footer>
+
+    <script>
+        const cadr1 = document.querySelector(".cadr1")
+        const card2 = document.querySelector(".card2")
+        const card3 = document.querySelector(".card3")
+        const imglogo = document.querySelector(".img-logo")
+        const plan1 = document.querySelector("#plan1")
+        const plan2 = document.querySelector("#plan2")
+        const plan3 = document.querySelector("#plan3")
+        const card4 = document.querySelector(".card4")
+        const end = document.querySelector(".end")
+        const rooz = document.querySelector(".rooz")
+        var textday = document.querySelector("#textday")
+
+
+        function day() {
+            if(textday.innerHTML == "روشن"){
+            document.body.style.backgroundColor = "#000"
+            textday.innerHTML = "شب"
+            rooz.style.backgroundColor = "#000"
+            rooz.style.color = "#fff"
+            imglogo.style.backgroundColor = "#1a1a1a"
+            cadr1.style.backgroundColor = "#1a1a1a"
+            card2.style.backgroundColor = "#1a1a1a"
+            plan1.style.backgroundColor = "#1a1a1a"
+            plan2.style.backgroundColor = "#1a1a1a"
+            plan3.style.backgroundColor = "#1a1a1a"
+            card3.style.backgroundColor = "#1a1a1a"
+            card4.style.backgroundColor = "#1a1a1a"
+            end.style.backgroundColor = "#1a1a1a"
+            }
+            else if (textday.innerHTML == "شب") {
+                document.body.style.backgroundColor = ""
+                textday.innerHTML = "روشن"
+                rooz.style.backgroundColor = ""
+                rooz.style.color = ""
+                imglogo.style.backgroundColor = ""
+                cadr1.style.backgroundColor = ""
+                card2.style.backgroundColor = ""
+                plan1.style.backgroundColor = ""
+                plan2.style.backgroundColor = ""
+                plan3.style.backgroundColor = ""
+                card3.style.backgroundColor = ""
+                card4.style.backgroundColor = ""
+                end.style.backgroundColor = ""
+            }
+        }
+    </script>
+</body>
+
+</html>
